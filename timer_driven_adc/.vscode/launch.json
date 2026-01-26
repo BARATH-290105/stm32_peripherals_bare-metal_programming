@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Bluepill Debug - timer_driven_adc",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "openocd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/Debug/timer_driven_adc.elf",
+
+      "gdbPath": "D:/STM32CubeIDE_2.0.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.100.202509120712/tools/bin/arm-none-eabi-gdb.exe",
+      "serverpath": "C:/Program Files/xpack-openocd-0.12.0-7/bin/openocd.exe",
+
+      "searchDir": [
+        "C:/Program Files/xpack-openocd-0.12.0-7/openocd/scripts"
+      ],
+
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f1x.cfg"
+      ],
+
+      "openOCDLaunchCommands": [
+        "adapter speed 4000"
+      ],
+
+      "postLaunchCommands": [
+        "monitor reset init"
+      ],
+
+      "svdFile": "C:/ST/STM32CubeIDE_2.0.0/plugins/com.st.stm32cube.ide.mcu/resources/svd/STM32F103.svd",
+
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 4
+      }
+    }
+  ]
+}
